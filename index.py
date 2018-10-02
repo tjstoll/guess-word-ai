@@ -18,8 +18,9 @@ class Index(object):
         self.number_of_letters = nLets
         self.category = category
 
-        gameLoop = GameLoop.GameLoop(name, nLets, category)        
-    
+        gameLoop = GameLoop.GameLoop(name, nLets, category)
+        
+# =============================================================================    
 if __name__ == '__main__':
     print("Hi I'm AnnieT1000. Imma guess whatever word you're thinking of.")
     name = input('Your name: ')

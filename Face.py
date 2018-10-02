@@ -8,7 +8,7 @@ class Face(object):
         self.game_board = ['_' for i in range(nLets)]
         self.number_of_letters = nLets
         
-        
+# -----------------------------------------------------------------------------
     def buildBoard(self, letterpos):
         '''
         Return the board
@@ -39,7 +39,7 @@ class Face(object):
                 
         return board_string + '\n' + pos_string
     
-        
+# -----------------------------------------------------------------------------
     def gameState(self, next_guess, previous_guesses, strikes, letterpos):
         '''
         next_guess - next guess from the brain class

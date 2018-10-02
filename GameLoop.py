@@ -82,13 +82,16 @@ class GameLoop(object):
         
         # Send letterpos to Brain to deal with
         self.brain.cleanList(True, letterpos[1:])
-        # Obtain next guess
-        self.brain.emitGuess()
         
-        # Check if the game is won
+        if self.gameStatus():
+            print("Thanks for playing!")
+            return None
+        else:
+            # Obtain next guess
+           self.brain.emitGuess()
         
-        self.face.gameState(self.brain.next_guess, self.brain.previous_guesses, self.strikes, letterpos)
-        self.requestResponse()
+           self.face.gameState(self.brain.next_guess, self.brain.previous_guesses, self.strikes, letterpos)
+           self.requestResponse()
 
 # -----------------------------------------------------------------------------      
     def wrongGuess(self):
@@ -97,16 +100,19 @@ class GameLoop(object):
         '''
         # Tell the brain that the letter or word guessed is incorrect
         self.brain.cleanList(False, [])
-        # Obtain the next guess
-        self.brain.emitGuess()
         
-        # Update strikes
-        self.strikes += 1
+        if self.gameStatus():
+            print("Thanks for playing!")
+            return None
+        else:
+            # Obtain the next guess
+            self.brain.emitGuess()
         
-        self.gameStatus()
-        
-        self.face.gameState(self.brain.next_guess, self.brain.previous_guesses, self.strikes, [])
-        self.requestResponse()
+            # Update strikes
+            self.strikes += 1
+            
+            self.face.gameState(self.brain.next_guess, self.brain.previous_guesses, self.strikes, [])
+            self.requestResponse()
         
 # -----------------------------------------------------------------------------
     def gameStatus(self):
@@ -115,15 +121,23 @@ class GameLoop(object):
         '''
         if self.strikes >= 10:
             print("Darn it I've lost! But I'm still learning.")
-            word = input('What was the word? ')
+            #word = input('What was the word? ')
             
             # Check if the word fits the number of letters and guessed letters and spelling
-            if len(word) != self.number_of_letters:
-                return "Word length does not match number of letters to be guessed" 
+            #if len(word) != self.number_of_letters:
+                #return "Word length does not match number of letters to be guessed" 
             # Save the word in memory
-        return "Thanks for playing!"
+            
+            return 1
+        else:
+            if '.' in self.brain.partial_word:
+                return 0
         
-        # Check if the game board is full of letters
+            else:
+                print('I think I won!')
+                return 1
+
         
 # =============================================================================        
-#if __name__ == '__main__':#    gl = GameLoop('Taneisha', 5, 'cats')
+if __name__ == '__main__':
+    gl = GameLoop('Taneisha', 8, 'cats')
