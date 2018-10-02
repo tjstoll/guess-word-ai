@@ -21,9 +21,9 @@ Previous Guesses: PQ
 Total Strikes: 2
 
 Correct Guess (y/n)? y
-Letter Location(s): 1,2,4
+Letter Location(s): 1,2,6
 ```
-- To indicate where a letter goes input the positions as `1` or `3,6` or `12,1,3` and so on (order does not matter). In this case, you would input `1,2,4`
+- To indicate where a letter goes input the positions as `1` or `3,6` or `12,1,3` and so on (order does not matter). In this case, you would input `1,2,6`
 - To leave the game input the word `exit` when the program asks to validate its guess
 
 ## Plans For The Future
