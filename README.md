@@ -1,5 +1,5 @@
 # Guess Word (Pseudo) AI
-###An AI approach to the reversal of the popular 'Hang Man' game. 
+### An AI approach to the reversal of the popular 'Hang Man' game. 
 
 ## As of now...
 ...it is a console-based python game similar to the [Guess Word](https://github.com/tjstoll/guess-word) game I created a few years ago. The only difference is that the program has to guess what word *you* are thinking of.
@@ -32,6 +32,7 @@ As you may have noticed, this is very rough. The "database" is a simple `.txt` f
 - A SQL database will be used to hold information about words and basic user habits
 - A real UI will be designed to make the game more attractive
 - A more robust guessing algorithm will be developed to make the program smarter
+
 And down the line I hope to use the data collected in this project to create another project in the realm of Data Science.
 
 As always, comments, concern, and constructive critism is gladly welcomed! Send them to [taneisha@tjstoll.com](mailto:taneisha@tjstoll.com?Subject=Guess%20Word%20AI%20Comments)

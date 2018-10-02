@@ -113,7 +113,7 @@ class GameLoop(object):
         '''
         Check to make sure the game is still valid
         '''
-        if self.strikes >= 26:
+        if self.strikes >= 10:
             print("Darn it I've lost! But I'm still learning.")
             word = input('What was the word? ')
             
@@ -126,5 +126,4 @@ class GameLoop(object):
         # Check if the game board is full of letters
         
 # =============================================================================        
-#if __name__ == '__main__':
-#    gl = GameLoop('Taneisha', 5, 'cats')
+#if __name__ == '__main__':#    gl = GameLoop('Taneisha', 5, 'cats')
